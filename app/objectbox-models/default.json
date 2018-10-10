@@ -1,0 +1,144 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:2497968370470402472",
+      "lastPropertyId": "29:8001491033568591705",
+      "name": "SpecieBox",
+      "properties": [
+        {
+          "id": "1:8831812293027646549",
+          "name": "key"
+        },
+        {
+          "id": "2:4165688825835838958",
+          "indexId": "1:8061585239903985432",
+          "name": "nubKey"
+        },
+        {
+          "id": "3:8239677408899879234",
+          "indexId": "2:467939823576536837",
+          "name": "nameKey"
+        },
+        {
+          "id": "4:8250603629464846719",
+          "name": "taxonID"
+        },
+        {
+          "id": "5:4134743238640026829",
+          "name": "sourceTaxonKey"
+        },
+        {
+          "id": "6:5540872701114696533",
+          "name": "kingdom"
+        },
+        {
+          "id": "7:994726692511676024",
+          "name": "kingdomKey"
+        },
+        {
+          "id": "8:5247126023930764710",
+          "name": "datasetKey"
+        },
+        {
+          "id": "9:8073858794825941591",
+          "name": "constituentKey"
+        },
+        {
+          "id": "10:5884906176634944271",
+          "name": "scientificName"
+        },
+        {
+          "id": "11:7238749908774832113",
+          "name": "canonicalName"
+        },
+        {
+          "id": "12:1403983706863290631",
+          "name": "authorship"
+        },
+        {
+          "id": "13:4695667404951717864",
+          "name": "nameType"
+        },
+        {
+          "id": "14:7242312651677237709",
+          "name": "rank"
+        },
+        {
+          "id": "15:5599029095068380500",
+          "name": "origin"
+        },
+        {
+          "id": "16:5505829011610699127",
+          "name": "taxonomicStatus"
+        },
+        {
+          "id": "17:573338885492181960",
+          "name": "nomenclaturalStatus"
+        },
+        {
+          "id": "18:3991195122357080403",
+          "name": "remarks"
+        },
+        {
+          "id": "19:2154112597978501569",
+          "name": "numDescendants"
+        },
+        {
+          "id": "20:4784509444462004567",
+          "name": "lastCrawled"
+        },
+        {
+          "id": "21:1060591063888900521",
+          "name": "lastInterpreted"
+        },
+        {
+          "id": "22:598841576275843243",
+          "name": "issues"
+        },
+        {
+          "id": "23:4638564936211239802",
+          "name": "synonym"
+        },
+        {
+          "id": "24:1603191593005822067",
+          "name": "phylum"
+        },
+        {
+          "id": "25:4027488150615061342",
+          "name": "phylumKey"
+        },
+        {
+          "id": "26:4496230905856604561",
+          "name": "parentKey"
+        },
+        {
+          "id": "27:1420396656842261564",
+          "name": "parent"
+        },
+        {
+          "id": "28:5576544980897254735",
+          "name": "acceptedKey"
+        },
+        {
+          "id": "29:8001491033568591705",
+          "name": "accepted"
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:2497968370470402472",
+  "lastIndexId": "2:467939823576536837",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

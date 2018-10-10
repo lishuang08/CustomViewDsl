@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/xmlFragment">
+    <fragment
+        android:id="@+id/xmlFragment"
+        android:name="ls.yylx.customviewdsl.XmlFragment"
+        android:label="fragment_xml"
+        tools:layout="@layout/fragment_recycleview">
+        <action
+            android:id="@+id/action_xmlFragment_pop"
+            app:popUpTo="@id/xmlFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dslFragment"
+        android:name="ls.yylx.customviewdsl.DslCustomFragment"
+        android:label="fragment_dsl"
+        tools:layout="@layout/fragment_recycleview" />
+    <fragment
+        android:id="@+id/dslViewGroupFragment"
+        android:name="ls.yylx.customviewdsl.DslViewGroupFragment"
+        android:label="fragment_dsl_view_group"
+        tools:layout="@layout/fragment_recycleview" />
+    <fragment
+        android:id="@+id/dslCodeFragment"
+        android:name="ls.yylx.customviewdsl.DslCodeFragment"
+        android:label="fragment_dsl_code" />
+    <fragment
+        android:id="@+id/dslGroupXmlFragment"
+        android:name="ls.yylx.customviewdsl.DslGroupXmlFragment"
+        android:label="fragment_dsl_group_xml"
+        tools:layout="@layout/fragment_recycleview" />
+    <action
+        android:id="@+id/action_global_xmlFragment"
+        app:clearTask="true"
+
+        app:destination="@id/xmlFragment" />
+    <action
+        android:id="@+id/action_global_dslFragment"
+        app:destination="@id/dslFragment"
+        app:clearTask="true" />
+    <action
+        android:id="@+id/action_global_dslViewGroupFragment"
+        app:destination="@id/dslViewGroupFragment"
+        app:clearTask="true"/>
+    <action
+        android:id="@+id/action_global_dslCodeFragment"
+        app:destination="@id/dslCodeFragment"
+        app:clearTask="true" />
+    <action
+        android:id="@+id/action_global_dslGroupXmlFragment"
+        app:destination="@id/dslGroupXmlFragment"
+        app:clearTask="true" />
+</navigation>
