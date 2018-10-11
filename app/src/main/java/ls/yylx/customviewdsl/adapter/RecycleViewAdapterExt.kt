@@ -1,4 +1,4 @@
-package ls.yylx.customviewdsl
+package ls.yylx.customviewdsl.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView

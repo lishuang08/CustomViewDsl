@@ -1,4 +1,4 @@
-package ls.yylx.customviewdsl
+package ls.yylx.customviewdsl.data
 
 
 import com.google.gson.Gson

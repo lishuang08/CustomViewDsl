@@ -5,6 +5,9 @@ import androidx.lifecycle.AndroidViewModel
 import io.objectbox.kotlin.boxFor
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import ls.yylx.customviewdsl.data.MyObjectBox
+import ls.yylx.customviewdsl.data.SpecieBox
+import ls.yylx.customviewdsl.network.ApiGbif
 import okhttp3.ConnectionSpec
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

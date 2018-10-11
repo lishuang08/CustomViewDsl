@@ -1,12 +1,11 @@
-package ls.yylx.customviewdsl
+package ls.yylx.customviewdsl.adapter
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import kotlinx.coroutines.runBlocking
-import org.jetbrains.anko.recyclerview.v7.recyclerView
-import org.jetbrains.anko.support.v4.UI
+import ls.yylx.customviewdsl.R
+import ls.yylx.customviewdsl.data.SpecieBox
 import kotlin.system.measureTimeMillis
 
 
@@ -23,16 +22,12 @@ class SpeciesRvAdapter(list: List<SpecieBox>) :
             runBlocking {
                 repeat(500) {
                     base = super.onCreateViewHolder(parent, viewType)
-
                 }
             }
         }
         println("BaseViewHolder    $time  ms")
 
-
         return base!!
-
-
     }
 
     override fun convert(helper: BaseViewHolder, item: SpecieBox) {

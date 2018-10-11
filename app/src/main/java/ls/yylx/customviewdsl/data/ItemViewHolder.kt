@@ -1,4 +1,4 @@
-package ls.yylx.customviewdsl
+package ls.yylx.customviewdsl.data
 
 import android.widget.CheckBox
 import android.widget.ImageView

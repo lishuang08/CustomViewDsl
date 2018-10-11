@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import io.objectbox.Box
 import io.objectbox.kotlin.boxFor
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,37 +32,40 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        bottom_bar.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.xmlFragment -> {
-                    navController.navigate(R.id.action_global_xmlFragment)
+        NavigationUI.setupActionBarWithNavController(this,navController)
 
-                }
-                R.id.dslFragment -> {
-                    navController.navigate(R.id.action_global_dslFragment)
-                }
-                R.id.dslViewGroupFragment -> {
-                    navController.navigate(R.id.action_global_dslViewGroupFragment)
-
-                }
-                R.id.dslCodeFragment -> {
-                    navController.navigate(R.id.dslCodeFragment)
-
-                }
-                R.id.dslGroupXmlFragment -> {
-                    navController.navigate(R.id.action_global_dslGroupXmlFragment)
-                }
-            }
-            true
-        }
+//        bottom_bar.setOnNavigationItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.xmlFragment -> {
+//                    navController.navigate(R.id.action_global_xmlFragment)
+//
+//                }
+//                R.id.dslFragment -> {
+//                    navController.navigate(R.id.action_global_dslFragment)
+//                }
+//                R.id.xmlCustomViewFragment -> {
+//                    navController.navigate(R.id.action_global_xmlCustomViewFragment)
+//
+//                }
+//                R.id.dslCodeFragment -> {
+//                    navController.navigate(R.id.dslCodeFragment)
+//
+//                }
+//                R.id.dslGroupXmlFragment -> {
+//                    navController.navigate(R.id.action_global_dslGroupXmlFragment)
+//                }
+//
+//            }
+//            true
+//        }
     }
+
+    override fun onSupportNavigateUp() = navController.navigateUp()
+
 
     override fun onResume() {
         super.onResume()
         vm.getData()
-
-
-
     }
 
 

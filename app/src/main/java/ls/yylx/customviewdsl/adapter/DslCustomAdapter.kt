@@ -1,17 +1,25 @@
-package ls.yylx.customviewdsl
+package ls.yylx.customviewdsl.adapter
 
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AbsListView
+import android.widget.FrameLayout
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_custom.view.*
 import kotlinx.coroutines.runBlocking
-import ls.yylx.customviewdsl.custom.customItemFile
+import ls.yylx.customviewdsl.R
+import ls.yylx.customviewdsl.custom.CustomItemView
+import ls.yylx.customviewdsl.data.ItemViewHolder
+import ls.yylx.customviewdsl.data.SpecieBox
 import org.jetbrains.anko.AnkoComponent
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.custom.customView
-import kotlin.system.measureNanoTime
+import org.jetbrains.anko.dip
+import org.jetbrains.anko.find
 import kotlin.system.measureTimeMillis
 
-class DslAdapter(val items: List<SpecieBox>) : RecyclerView.Adapter<SpecieBoxViewHolder>() {
+class DslCustomAdapter(val items: List<SpecieBox>) : RecyclerView.Adapter<SpecieBoxCustomViewHolder>() {
+
 
     override fun getItemCount(): Int = items.size
 
@@ -29,8 +37,8 @@ class DslAdapter(val items: List<SpecieBox>) : RecyclerView.Adapter<SpecieBoxVie
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpecieBoxViewHolder {
-        var ho: SpecieBoxViewHolder? = null
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpecieBoxCustomViewHolder {
+        var ho: SpecieBoxCustomViewHolder? = null
 
         val viewHolder by lazy {
             ItemViewHolder()
@@ -39,7 +47,7 @@ class DslAdapter(val items: List<SpecieBox>) : RecyclerView.Adapter<SpecieBoxVie
         val time = measureTimeMillis {
             runBlocking {
                 repeat(500) {
-                    ho = SpecieBoxViewHolder(parent, viewHolder)
+                    ho = SpecieBoxCustomViewHolder(parent)
                 }
             }
         }
@@ -49,10 +57,7 @@ class DslAdapter(val items: List<SpecieBox>) : RecyclerView.Adapter<SpecieBoxVie
     }
 
 
-
-
-
-    override fun onBindViewHolder(holder: SpecieBoxViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SpecieBoxCustomViewHolder, position: Int) {
         holder.bindTo(items[position])
 
         holder.itemView.setOnClickListener {
@@ -63,21 +68,22 @@ class DslAdapter(val items: List<SpecieBox>) : RecyclerView.Adapter<SpecieBoxVie
 }
 
 
-class SpecieBoxViewHolder(parent: ViewGroup, val viewHolder: ItemViewHolder) : RecyclerView.ViewHolder(
-        DslAdapterview(viewHolder).createView(AnkoContext.create(parent.context, parent))) {
+class SpecieBoxCustomViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
+        DslCustomAdapterview().createView(AnkoContext.create(parent.context, parent))) {
 
     fun bindTo(item: SpecieBox) {
-        viewHolder.tv0?.text = item.toString()
+        itemView.find<CustomItemView>(R.id.item).textName = item.toString()
     }
 }
 
 
-class DslAdapterview(val viewHolder: ItemViewHolder) : AnkoComponent<View> {
+class DslCustomAdapterview() : AnkoComponent<View> {
 
     override fun createView(ui: AnkoContext<View>) =
         with(ui) {
-            customItemFile(viewHolder)
-
-
+            customView<CustomItemView> {
+                layoutParams = FrameLayout.LayoutParams(-2, dip(56))
+                id   = R.id.item
+            }
         }
 }

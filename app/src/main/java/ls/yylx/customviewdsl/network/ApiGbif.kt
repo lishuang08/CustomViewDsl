@@ -1,5 +1,6 @@
-package ls.yylx.customviewdsl
+package ls.yylx.customviewdsl.network
 
+import ls.yylx.customviewdsl.data.SpeciesBoxBack
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

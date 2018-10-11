@@ -3,55 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/xmlFragment">
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ls.yylx.customviewdsl.MainFragment"
+        android:label="MainFragment">
+        <action
+            android:id="@+id/action_mainFragment_to_xmlFragment"
+            app:destination="@id/xmlFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dslFragment"
+            app:destination="@id/dslFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dslGroup_XmlFragment"
+            app:destination="@id/dslGroup_XmlFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dslGroup_DslFragment"
+            app:destination="@id/dslGroup_DslFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_customView_XmlFragment"
+            app:destination="@id/customView_XmlFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_dslExt_DslFragment"
+            app:destination="@id/dslExt_DslFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_customView_DslFragment"
+            app:destination="@id/customView_DslFragment" />
+
+    </fragment>
+
+
     <fragment
         android:id="@+id/xmlFragment"
-        android:name="ls.yylx.customviewdsl.XmlFragment"
-        android:label="fragment_xml"
+        android:name="ls.yylx.customviewdsl.fragment.XmlFragment"
+        android:label="纯xml加载"
         tools:layout="@layout/fragment_recycleview">
-        <action
-            android:id="@+id/action_xmlFragment_pop"
-            app:popUpTo="@id/xmlFragment"
-            app:popUpToInclusive="true" />
+
     </fragment>
+
     <fragment
         android:id="@+id/dslFragment"
-        android:name="ls.yylx.customviewdsl.DslCustomFragment"
-        android:label="fragment_dsl"
+        android:name="ls.yylx.customviewdsl.fragment.DslFragment"
+        android:label="纯dsl加载"
         tools:layout="@layout/fragment_recycleview" />
     <fragment
-        android:id="@+id/dslViewGroupFragment"
-        android:name="ls.yylx.customviewdsl.DslViewGroupFragment"
-        android:label="fragment_dsl_view_group"
-        tools:layout="@layout/fragment_recycleview" />
+        android:id="@+id/customView_XmlFragment"
+        android:name="ls.yylx.customviewdsl.fragment.CustomView_XmlFragment"
+        android:label="自定义View Xml加载" />
     <fragment
-        android:id="@+id/dslCodeFragment"
-        android:name="ls.yylx.customviewdsl.DslCodeFragment"
-        android:label="fragment_dsl_code" />
+        android:id="@+id/dslGroup_DslFragment"
+        android:name="ls.yylx.customviewdsl.fragment.DslGroup_DslFragment"
+        android:label="DslGroup_DslFragment" />
     <fragment
-        android:id="@+id/dslGroupXmlFragment"
-        android:name="ls.yylx.customviewdsl.DslGroupXmlFragment"
-        android:label="fragment_dsl_group_xml"
-        tools:layout="@layout/fragment_recycleview" />
-    <action
-        android:id="@+id/action_global_xmlFragment"
-        app:clearTask="true"
+        android:id="@+id/dslGroup_XmlFragment"
+        android:name="ls.yylx.customviewdsl.fragment.DslGroup_XmlFragment"
+        android:label="DslGroup_XmlFragment" />
+    <fragment
+        android:id="@+id/dslExt_DslFragment"
+        android:name="ls.yylx.customviewdsl.fragment.DslExt_DslFragment"
+        android:label="DslExt_DslFragment" />
+    <fragment
+        android:id="@+id/customView_DslFragment"
+        android:name="ls.yylx.customviewdsl.fragment.CustomView_DslFragment"
+        android:label="CustomView_DslFragment" />
 
-        app:destination="@id/xmlFragment" />
-    <action
-        android:id="@+id/action_global_dslFragment"
-        app:destination="@id/dslFragment"
-        app:clearTask="true" />
-    <action
-        android:id="@+id/action_global_dslViewGroupFragment"
-        app:destination="@id/dslViewGroupFragment"
-        app:clearTask="true"/>
-    <action
-        android:id="@+id/action_global_dslCodeFragment"
-        app:destination="@id/dslCodeFragment"
-        app:clearTask="true" />
-    <action
-        android:id="@+id/action_global_dslGroupXmlFragment"
-        app:destination="@id/dslGroupXmlFragment"
-        app:clearTask="true" />
+
 </navigation>
